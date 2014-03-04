@@ -1,13 +1,7 @@
- /// done
- //ball bounces off paddle
- //cant move paddle off screen,
- // scoring
-
 /// TODO - 
 // bot AI
 // y velocity for ball
 // restart game
-
 
 function Game() {};
 Game.prototype.init = function (){
@@ -22,7 +16,6 @@ Game.prototype.init = function (){
 
 		document.addEventListener("keydown", this.userMove, false);
 };
-
 
 Game.prototype.start = function(){
 	ball = new Ball();
@@ -41,9 +34,7 @@ Game.prototype.gameLoop = function(){
 		game.draw();
 		break;
 	}
-
 };
-
 
 Game.prototype.update = function(){
 	ball.pos.x += ball.vel.x;
@@ -81,7 +72,6 @@ Game.prototype.userMove = function (e){
 	}
 };
 
-
 Game.prototype.checkBoundaries = function(){
 	if(ball.pos.x >= ( game.canvas.width - ball.dim.w ) || ball.pos.x <= 0){
 		if (ball.pos.x < paddle['user'].pos.x){
@@ -96,7 +86,6 @@ Game.prototype.checkBoundaries = function(){
 		ball.flipDir("y");
 	}
 };
-
 
 Game.prototype.scoreIncrement = function(player){
 	this.score[player]+= 1;
@@ -204,17 +193,9 @@ Paddle.prototype.checkY = function() {
 	}
 }
 
-
 Paddle.prototype.updateBot = function(){
 	if(ball.vel.x>0){
 		distance = ball.pos.y - paddle['bot'].pos.y;
 		paddle['bot'].vel.y += distance/2;
 	}
 }
-
-// ball object - 
-// paddle object for user
-// another paddle object for bot
-// arrow keys -- move up and down
-// check end condition
-// scoring?
