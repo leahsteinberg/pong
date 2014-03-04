@@ -9,7 +9,6 @@
 // restart game
 
 
-
 function Game() {};
 Game.prototype.init = function (){
 		this.canvas = document.getElementById("gamecanvas");
@@ -90,9 +89,6 @@ Game.prototype.scoreIncrement = function(player){
 };
 
 Game.prototype.bouncePaddle = function(paddle_id){
-	console.log('ball_x: ' + ball.pos.x);
-	console.log('ball_w: ' + ball.dim.w);
-	console.log('paddle_x: ' + paddle[paddle_id].pos.x);
 	if(
 		//Check ball is within paddle bounds on x axis
 		ball.pos.x + ball.dim.w >= paddle[paddle_id].pos.x &&
@@ -154,8 +150,8 @@ Ball.prototype.reset = function(d, x, y, w, h){
 	if(typeof(x) === 'undefined') {
 		x = ( game.canvas.width + 15 ) / 2;
 		y = game.canvas.height / 2 -50;
-		w = '15';
-		h = '15';
+		w = 15;
+		h = 15;
 	}
 	this.pos = {x: x, y: y};
 	this.vel = {x: 1 * d, y: 0};
