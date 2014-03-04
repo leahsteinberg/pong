@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script src = "pong.js">
+</script>
+<script>
+function prepare_game() {
+	game = new Game();
+	game.init();
+	setInterval(game.gameLoop, 5);
+}
+</script>
+</head>
+<body onLoad = "prepare_game()">
+<canvas id="gamecanvas" width="600" height = "300"> 
+</canvas>
+<input type = "button" onClick = "game.start();" value = "Start Game">
+</body>
+</html>
